@@ -1,74 +1,431 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portafolio de Eduardo</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portafolio Jose Eduardo Rodriguez</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+font-family: 'Segoe UI', sans-serif;
+background-color: #0d1117;
+color: white;
+}
+header {
+text-align: center;
+padding: 50px 20px;
+background: #161b22;
+position: relative;
+overflow: hidden;
+}
+.galaxy-container {
+position: relative;
+display: inline-block;
+width: 360px;
+height: 360px;
+}
+.central-image {
+width: 160px;
+height: 160px;
+border-radius: 50%;
+border: 4px solid #58a6ff;
+z-index: 10;
+position: absolute;
+top: 100px;
+left: 100px;
+}
+.orbit {
+position: absolute;
+border: 1px dashed rgba(255, 255, 255, 0.1);
+border-radius: 50%;
+animation: spin linear infinite;
+}
+.icon {
+width: 40px;
+height: 40px;
+position: absolute;
+top: 0;
+left: 50%;
+transform: translateX(-50%);
+}
+.orbit-1 { width: 260px; height: 260px; top: 50px; left: 50px; animation-duration: 10s; }
+.orbit-2 { width: 300px; height: 300px; top: 30px; left: 30px; animation-duration: 15s; }
+.orbit-3 { width: 340px; height: 340px; top: 10px; left: 10px; animation-duration: 25s; }
+.orbit-4 { width: 380px; height: 380px; top: -10px; left: -10px; animation-duration: 30s; }
+@keyframes spin {
+from { transform: rotate(0deg); }
+to { transform: rotate(360deg); }
+}
+h1 { font-size: 2.2rem; color: #fff; margin-top: 20px; }
+nav {
+background-color: #0d1117;
+padding: 15px 0;
+text-align: center;
+}
+nav a {
+color: #58a6ff;
+margin: 0 20px;
+text-decoration: none;
+font-weight: bold;
+font-size: 1.1rem;
+cursor: pointer;
+}
+nav a.active {
+border-bottom: 2px solid #58a6ff;
+padding-bottom: 3px;
+}
+section {
+display: none;
+padding: 60px 20px;
+max-width: 1000px;
+margin: auto;
+}
+section.active { display: block; }
+h2 {
+color: #58a6ff;
+text-align: center;
+margin-bottom: 30px;
+}
+
+/* SOBRE MI */
+.sobre-mi-grid {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: center;
+}
+.cuadro-sobre-mi {
+flex: 1 1 300px;
+background-color: #161b22;
+padding: 20px;
+border-radius: 12px;
+box-shadow: 0 0 10px rgba(88,166,255,0.2);
+cursor: pointer;
+transition: all 0.3s ease;
+}
+.cuadro-sobre-mi:hover { box-shadow: 0 0 15px rgba(88,166,255,0.4); }
+.contenido-expandible { display: none; margin-top: 10px; }
+.cuadro-sobre-mi.activo .contenido-expandible { display: block; }
+
+/* PROYECTO */
+.categorias-grid {
+display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;
+}
+.categoria {
+flex: 1 1 250px; background-color: #161b22; padding: 20px;
+border-radius: 12px; box-shadow: 0 0 10px rgba(88,166,255,0.2);
+cursor: pointer; text-align: center; transition: all 0.3s ease;
+}
+.categoria:hover { box-shadow: 0 0 15px rgba(88,166,255,0.4); }
+.categoria img { width: 80px; height: 80px; margin-bottom: 10px; }
+.categoria h3 { margin-bottom: 10px; }
+.categoria .contenido-expandible {
+display: none; margin-top: 15px; text-align: left;
+}
+.categoria.activo .contenido-expandible { display: block; }
+.proyecto {
+background: #0d1117; padding: 10px; margin-bottom: 10px;
+border-radius: 8px; border-left: 3px solid #58a6ff;
+}
+
+/* EXPERIENCIA */
+.timeline {
+border-left: 2px solid #58a6ff;
+padding-left: 20px;
+}
+.timeline-item { margin-bottom: 20px; }
+.timeline-item h3 { color: #58a6ff; }
+
+/* FOOTER */
+footer {
+text-align: center;
+padding: 20px;
+background-color: #161b22;
+color: #8b949e;
+}
+html { scroll-behavior: smooth; }
+</style>
 </head>
 <body>
-  <header>
-    <div class="galaxy-container">
-      <img src="perfil.jpg.jpg" alt="Foto de Eduardo" class="central-image" />
-      <img src="https://www.pngall.com/wp-content/uploads/17/Dataverse-Logo-Digital-Emblem-PNG-thumb.png" class="orbiting-icon" data-radius="130" data-speed="0.01" />
-      <img src="https://www.it.miami.edu/_assets/images/PowerApps_256.png" class="orbiting-icon" data-radius="150" data-speed="0.008" />
-      <img src="https://logos-world.net/wp-content/uploads/2022/02/Power-BI-Logo.png" class="orbiting-icon" data-radius="170" data-speed="0.006" />
-      <img src="https://circyl.co.uk/wp-content/uploads/2023/02/icon_automate.png" class="orbiting-icon" data-radius="190" data-speed="0.004" />
-    </div>
-    <h1>Jose Eduardo Rodríguez Guzman</h1>
-    <p>Business Intelligence Analyst</p>
-  </header>
+<header>
+<div class="galaxy-container">
+<img src="https://media.licdn.com/dms/image/v2/D4E03AQEhcK7wLhNRbQ/profile-displayphoto-crop_800_800/B4EZlJD8fbGUAI-/0/1757867396336?e=1761782400&v=beta&t=H59JTrWoOisx1uGDawj0RiJPn-0XOgVblLE9g12OlGg" class="central-image" />
+<div class="orbit orbit-1"><img src="https://freepnglogo.com/images/all_img/excel-logo-24ae.png" class="icon" /></div>
+<div class="orbit orbit-2"><img src="https://www.it.miami.edu/_assets/images/PowerApps_256.png" class="icon" /></div>
+<div class="orbit orbit-3"><img src="https://logos-world.net/wp-content/uploads/2022/02/Power-BI-Logo.png" class="icon" /></div>
+<div class="orbit orbit-4"><img src="https://circyl.co.uk/wp-content/uploads/2023/02/icon_automate.png" class="icon" /></div>
+</div>
+<h1>José Eduardo Rodríguez Guzmán</h1>
+<p>Business Intelligence Analyst</p>
+</header>
 
-  <nav>
-    <a onclick="mostrarSeccion('sobre-mi')">Sobre mí</a>
-    <a onclick="mostrarSeccion('contacto')">Contacto</a>
-  </nav>
+<nav>
+<a onclick="mostrarSeccion('sobre-mi')" class="active">Sobre mí</a>
+<a onclick="mostrarSeccion('proyectos', this)">Proyectos</a>
+<a onclick="mostrarSeccion('experiencia')">Experiencia</a>
+<a onclick="mostrarSeccion('educacion')">Educación</a>
+<a onclick="mostrarSeccion('contacto')">Contacto</a>
+</nav>
 
-  <section id="sobre-mi" class="active">
-    <h2>Sobre mí</h2>
-    <div class="sobre-mi-grid">
-      <div class="cuadro-sobre-mi" onclick="toggleExpand(this)">
-        <h3>🧑‍💼 Resumen Profesional</h3>
-        <div class="contenido-expandible">
-          <p>Mi nombre es José Eduardo Rodríguez, soy estudiante de Ingeniería en Redes y Telecomunicaciones...</p>
-        </div>
-      </div>
-      <div class="cuadro-sobre-mi" onclick="toggleExpand(this)">
-        <h3>⚙️ Habilidades Técnicas</h3>
-        <div class="contenido-expandible">
-          <ul>
-            <li>Modelado de datos con Power Query y M</li>
-            <li>Dashboards en Power BI</li>
-            <li>Power Automate, Power Apps</li>
-            <li>Excel avanzado, SQL, SharePoint</li>
-          </ul>
-        </div>
-      </div>
-      <div class="cuadro-sobre-mi" onclick="toggleExpand(this)">
-        <h3>🌟 Habilidades Blandas y Visión</h3>
-        <div class="contenido-expandible">
-          <ul>
-            <li>Pensamiento analítico</li>
-            <li>Comunicación efectiva</li>
-            <li>Colaboración multidisciplinaria</li>
-            <li>Visión de crecimiento en Business Intelligence</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+<section id="sobre-mi" class="active">
+<h2>Sobre mí</h2>
+<div class="sobre-mi-grid">
+<div class="cuadro-sobre-mi" onclick="toggleExpand(this)">
+<h3>🧑‍💼 Resumen Profesional</h3>
+<div class="contenido-expandible">
+<p>Soy Técnico en Inteligencia de Negocios con formación en Ingeniería en Redes y Telecomunicaciones, especializado en el desarrollo de soluciones de gestión de datos, automatización de procesos y visualización estratégica. Actualmente formo parte del equipo de Business Intelligence, 
+Data Management & Analytics en Eaton, donde contribuyo al diseño e implementación de herramientas que habilitan la toma de decisiones en tiempo real.</p>
+<p>Mi enfoque combina habilidades técnicas avanzadas con pensamiento analítico para transformar datos crudos en soluciones accionables. 
+He participado en iniciativas de mejora continua (BPI, RIEs), optimizado procesos de recolección y presentación de datos, y brindado soporte técnico en sistemas como MAPICS, 
+Power BI Service y aplicaciones desarrolladas en O365.</p>
+</div>
+</div>
+<div class="cuadro-sobre-mi" onclick="toggleExpand(this)">
+<h3>⚙️ Habilidades Técnicas</h3>
+<div class="contenido-expandible">
+<ul>
+<li>Power BI: Modelado de datos con Power Query y DAX, diseño de dashboards interactivos, conexión con SharePoint y MAPICS, visualización de KPIs, análisis temporal y categorización de hallazgos.</li>
+<li>Power Automate: Automatización de flujos de trabajo, gestión de aprobaciones, recordatorios, integración con SharePoint, Outlook y Teams.</li>
+<li>Power Apps: Desarrollo de aplicaciones móviles para captura de datos, control de acceso por rol, validaciones en tiempo real, integración con flujos y listas.</li>
+<li>Excel Avanzado: Modelos con macros, consolidación de datos, análisis estadístico.</li>
+<li>SQL: Consultas para extracción de datos, creación de reportes desde sistemas MAPICS.</li>
+<li>MAPICS (AA Environment): Soporte en procesos de manufactura, creación de órdenes bajo desviación, extracción de datos para finanzas.</li>
+<li>O365: Mantenimiento de sistemas personalizados (material request, replenishment), integración con BI y automatización.</li>
+<li>Cloud & Data Platforms: Conocimientos básicos en Azure, bases de datos relacionales y no relacionales.</li>
+</ul>
+</div>
+</div>
+<div class="cuadro-sobre-mi" onclick="toggleExpand(this)">
+<h3>🌟 Habilidades Blandas y Visión</h3>
+<div class="contenido-expandible">
+<ul>
+<li>Pensamiento analítico: Capacidad para identificar patrones, interpretar datos complejos y proponer soluciones basadas en evidencia.</li>
+<li>Comunicación efectiva: Presentación clara de resultados, narración de historias con datos, interacción con stakeholders técnicos y no técnicos.</li>
+<li>Colaboración multidisciplinaria: Trabajo conjunto con equipos de producción, calidad, finanzas e ingeniería.</li>
+<li>Visión de crecimiento en Business Intelligence</li>
+<li>Gestión de proyectos ágiles: Participación en entregas iterativas, estimación de esfuerzo, revisión de diseño e implementación.</li>
+<li>Comunicación efectiva</li>
+<li>Orientación a resultados: Enfoque en la mejora continua, eficiencia operativa y calidad de la información.</li>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>📞 Teléfono: <span style="color: #58a6ff;">(829)-750-1932</span></p>
-    <p>✉️ Correo: <a href="mailto:joseeduardorodriguez2001@gmail.com" style="color: #58a6ff;">joseeduardorodriguez2001@gmail.com</a></p>
-    <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/jose-eduardo-rodriguez-36739619b" target="_blank" style="color: #58a6ff;">Visitar perfil</a></p>
-  </section>
+</ul>
+</div>
+</div>
+</div>
+</section>
 
-  <footer>
-    <p>&copy; 2025 Eduardo. Todos los derechos reservados.</p>
-  </footer>
 
-  <script src="script.js"></script>
+
+
+
+
+
+<section id="proyectos">
+<h2>Proyectos</h2>
+<div class="categorias-grid">
+<!-- Power BI -->
+<div class="categoria" onclick="toggleExpand(this)">
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Logo Power BI">
+<h3>Power BI</h3>
+<div class="contenido-expandible">
+<div class="proyecto">
+<h4>Dashboard de Hallazgos EHS</h4>
+<h5>Mejora realizada</h5>
+<p>Centralización y análisis dinámico de hallazgos de inspecciones EHS</p>
+<h5>Resumen</h5>
+<p>Desarrollo de dashboards interactivos en Power BI conectados a listas de SharePoint que consolidan los hallazgos registrados durante inspecciones de Salud, 
+Seguridad y Medio Ambiente (EHS). El modelo de datos fue construido en Power Query con transformaciones para normalizar campos como auditor, línea, turno y mes. 
+Se aplicaron medidas DAX para calcular tasas de cumplimiento, frecuencia de hallazgos por área, y categorización por tipo de desviación.
+El informe incluye filtros cruzados, segmentación temporal, y visualizaciones que permiten identificar patrones de incumplimiento, evaluar desempeño por auditor y línea, 
+y facilitar la toma de decisiones correctivas. La solución reemplaza reportes manuales y mejora la trazabilidad de acciones correctivas.</p>
+</div>
+<div class="proyecto">
+<h4>Reporte LPA para Calidad</h4>
+<h5>Mejora realizada</h5>
+<p>Visualización clara del cumplimiento por línea y auditor.</p>
+<h5>Resumen</h5>
+<p>Desarrollo de un reporte LPA en Power BI conectado a fuentes de datos de calidad. Se aplicaron filtros dinámicos por línea, auditor y fecha, 
+con modelado en Power Query y DAX para calcular tasas de cumplimiento y desviaciones. 
+El dashboard permite análisis comparativo entre áreas y seguimiento de auditorías en tiempo real.</p>
+</div>
+<div class="proyecto">
+<h4>Reporte Stock Level para Supply Chain </h4>
+<h5>Mejora realizada</h5>
+<p>Identificación proactiva de materiales escasos en planta</p>
+<h5>Resumen</h5>
+<p>Desarrollo de un reporte en Power BI para monitorear niveles de inventario y detectar productos con riesgo de agotamiento. El modelo incluye reglas de umbral dinámicas, 
+segmentación por área de producción, y alertas visuales mediante formato condicional. Se integran datos de consumo histórico y lead time para anticipar necesidades y optimizar la reposición.</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<!-- Power Automate -->
+<div class="categoria" onclick="toggleExpand(this)">
+<img src="https://circyl.co.uk/wp-content/uploads/2023/02/icon_automate.png" alt="Logo Power Automate">
+<h3>Power Automate</h3>
+<div class="contenido-expandible">
+<div class="proyecto">
+<h4>Automatización de Aprobaciones en Cadena</h4>
+<h5>Mejora Realizada</h5>
+<p>Reducción del tiempo de ejecución y eliminación del papel</p>
+<p>Diseño e implementación de flujos condicionales en Power Automate para gestionar aprobaciones jerárquicas en procesos de manufactura. 
+El sistema consulta dinámicamente listas de SharePoint para identificar aprobadores según línea y turno, envía notificaciones por Teams, 
+y registra respuestas en campos específicos. Incluye lógica de reenvío, recordatorios y control de estado por etapa (ING, PLS, FIN)</p>
+</div>
+
+
+<div class="proyecto">
+<h4>Digitalización de Auditorías</h4>
+<h5>Mejora Realizada</h5>
+<p>Reducción del tiempo de ejecución y eliminación del papel</p>
+<h5>Resumen</h5>
+<p>Migración de auditorías de formato físico a digital mediante formularios en SharePoint y flujos en Power Automate. Se logró reducir el tiempo de ejecución de 45 a 25 minutos, 
+automatizar aprobaciones, generar registros electrónicos y facilitar el análisis posterior.</p>
+</div>
+
+<div class="proyecto">
+<h4>Recordatorios de Compromisos</h4>
+<h5>Mejora Realizada</h5>
+<p>Automatización de alertas y seguimiento de tareas.</p>
+<h5>Resumen</h5>
+<p>Implementación de flujos en Power Automate para enviar recordatorios automáticos a responsables de acciones comprometidas. 
+El sistema consulta listas de SharePoint, evalúa fechas límite y envía notificaciones por correo y Teams, reduciendo el riesgo de incumplimientos.</p>
+</div>
+
+</div>
+</div>
+</div>
+<!-- Power Apps -->
+<div class="categoria" onclick="toggleExpand(this)">
+<img src="https://www.it.miami.edu/_assets/images/PowerApps_256.png" alt="Logo Power Apps">
+<h3>Power Apps</h3>
+<div class="contenido-expandible">
+<div class="proyecto">
+<h4>App de Inspección de Seguridad</h4>
+<h5>Mejora Realizada</h5>
+<p>Digitalización del proceso de inspección, validación estructurada y automatización de aprobaciones</p>
+<h5>Resumen</h5>
+<p>CDiseño y desarrollo de una aplicación móvil en Power Apps para registrar inspecciones de seguridad en planta, reemplazando formularios físicos por una solución digital conectada a listas de SharePoint. 
+La app permite entrada de datos estructurada con validaciones en tiempo real, lógica condicional para mostrar u ocultar campos según el tipo de hallazgo, 
+y control de acceso por rol para garantizar la integridad del proceso.
+Al registrar una inspección, se dispara automáticamente un flujo en Power Automate que envía la información a los responsables, gestiona aprobaciones, y actualiza el estado en SharePoint. 
+La solución mejora la trazabilidad, reduce el tiempo de ejecución, y facilita el análisis posterior mediante integración con Power BI.</p>
+</div>
+
+<div class="proyecto">
+<h4>App para Captura de Resistencias</h4>
+<h5>Mejora Realizada</h5>
+<p>Digitalización del registro de datos críticos en línea.</p>
+<h5>Resumen</h5>
+<p>Desarrollo de una aplicación móvil para capturar resistencias en la línea de Fuses. La app reemplaza el registro manual en papel, 
+asegurando trazabilidad, integridad de datos y disponibilidad inmediata para análisis. Incluye validaciones, almacenamiento en SharePoint y control por operador.</p>
+</div>
+
+<div class="proyecto">
+<h4>App para Seguimiento de Materiales No Conformes</h4>
+<h5>Mejora Realizada</h5>
+<p>Gestión digital de rechazos con trazabilidad y control por usuario.</p>
+<h5>Resumen</h5>
+<p>Creación de una app para registrar, filtrar y monitorear materiales no conformes. Los usuarios se autentican con su código, acceden a registros existentes, 
+filtran por estatus y crean nuevos casos. Power Automate gestiona aprobaciones técnicas, adjunta evidencia y actualiza el estado en SharePoint.</p>
+</div>
+
+</div>
+</div>
+</div>
+<!-- Excel  -->
+<div class="categoria" onclick="toggleExpand(this)">
+<img src="https://freepnglogo.com/images/all_img/excel-logo-24ae.png" alt="Logo Excel">
+<h3> Excel </h3>
+<div class="contenido-expandible">
+<div class="proyecto">
+<h4>Automatización de Reportes de Auditoría 5S+ por Línea en Excel</h4>
+<h5>Mejora Realizada</h5>
+<p> Reducción del tiempo de actualización mensual en más del 80%.</p>
+<h5>Resumen</h5>
+<p>Desarrollé un sistema automatizado en Excel que conecta una base de datos central con hojas por línea de producción, 
+permitiendo actualizar los scores mensuales de auditoría 5S+ de forma dinámica. 
+Utilicé fórmulas como XLOOKUP y FILTER para extraer los datos según mes y línea.</p>
+</p>La solución es escalable, adaptable a nuevas líneas o auditorías, y ha mejorado significativamente la eficiencia del proceso 
+de reporte mensual, reduciendo el tiempo de actualización en más del 80%. 
+Además, ha contribuido a una mejor visualización de los resultados y a una toma de decisiones más ágil por parte del equipo de calidad y producción.</p>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+
+<section id="experiencia">
+<h2>Experiencia Laboral</h2>
+<div class="timeline">
+<div class="timeline-item">
+<h3>Business Intelligence Technician - Eaton MCCB</h3>
+<p><em>Jornada Completa</em></p>
+<p><em>2025 - Actualidad</em></p>
+</ul>
+<li>Desarrollo, mantenimiento y optimización de soluciones de Business Intelligence enfocadas en operaciones de manufactura, utilizando herramientas de Microsoft Power Platform.</li>
+<li>Modelado de datos avanzado con Power Query (M) y DAX para el análisis de indicadores clave (KPIs) en producción, calidad y finanzas.</li>
+<li>Creación de dashboards estratégicos en Power BI con integración a fuentes en la nube (Excel Online, SharePoint, Dataflows).</li>
+<li>Automatización de procesos mediante Power Automate para generación de reportes, asignación de identificadores únicos y control de flujos de entrada de datos.</li>
+<li>Apoyo técnico en el levantamiento de requerimientos, validación de integridad de datos y optimización de consultas.</li>
+<li>Aplicación de metodologías OPEX para la mejora continua basada en insights generados desde datos operacionales y administrativos.</li>
+<li>Colaboración con equipos multidisciplinarios para entregar soluciones que soporten decisiones tácticas y estratégicas en planta.</li>
+</ul>
+</div>
+<div class="timeline-item">
+<h3>Business Intelligence Engineer - Eaton MCCB</h3>
+<p><em>Temporal</em></p>
+<p><em>2024</em></p>
+<ul>
+<li>Interpretar Datos: Recopilar, procesar y analizar conjuntos de datos para generar información que apoye la toma de decisiones.</li>
+<li>Limpieza y Transformación de Datos: Limpiar, estructurar y formatear los datos (data wrangling) para prepararlos para el análisis.</li>
+<li>Análisis Estadístico: Análisis estadísticos y modelado de datos para identificar tendencias, patrones y relaciones dentro de los datos.</li>
+<li>Visualización de Datos: Visualizaciones como gráficos, tablas y paneles para comunicar eficazmente las ideas obtenidas de los datos.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="educacion">
+<h2>Educaci&oacute;n y Certificaciones</h2>
+<p>🎓 Ingenier&iacute;a en Redes y Telecomunicaciones - Instituto Especializado de Estudios Superiores Loyola (en fase de tesis)</p>
+<p>📜 Cursos: Power BI, Power Automate, SQL, Data Analytics.</p>
+<p>&nbsp;</p>
+<p>Insignias obtenidas (click para verificar):</p>
+<p style="text-align: left;">&nbsp;</p>
+<p>&nbsp;<img style="float: left;" src="https://learn.microsoft.com/en-us/training/achievements/data-preparation-in-power-bi.svg" width="94" height="100" /> <a href="https://www.credly.com/badges/fc59ce0d-0b73-4423-a6db-fd6e7ab5c235/linked_in" target="_blank"><img style="float: left;" src="https://images.credly.com/size/680x680/images/b38a42e0-dc58-4ce2-b6c0-28d978e8aaad/image.png" width="100" height="100" /></a> <a href="https://learn.microsoft.com/en-us/users/na-9859/achievements/h75pnmt8?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank"><img style="float: left;" src="https://learn.microsoft.com/en-us/training/achievements/intro-process-mining.svg" width="100" height="100" /></a> <a href="https://learn.microsoft.com/en-us/users/na-9859/achievements/2k5wsq5v?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank"><img style="float: left;" src="https://learn.microsoft.com/en-us/training/achievements/create-manage-workspaces-power-bi.svg" width="100" height="100" /></a> <img style="float: left;" src="https://learn.microsoft.com/en-us/training/achievements/analyze-explore-data-power-bi.svg" width="100" height="100" /> <a href="https://learn.microsoft.com/en-us/users/na-9859/achievements/kl37ucfb?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank"><img style="float: left;" src="https://learn.microsoft.com/en-us/training/achievements/deploy-and-maintain-data-in-power-bi.svg" width="84" height="100" /></a> <img style="float: left;" src="https://learn.microsoft.com/en-us/training/achievements/explore-sql-server-and-query-tools.svg" width="100" height="100" />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br /><br /><br /><br /><br /></p>
+</section>
+
+<section id="contacto">
+<h2>Contacto</h2>
+<p>📞 Teléfono: <span style="color: #58a6ff;">(829)-750-1932</span></p>
+<p>✉️ Correo: <a href="mailto:joseeduardorodriguez2001@gmail.com" style="color: #58a6ff;">joseeduardorodriguez2001@gmail.com</a></p>
+<p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/jose-eduardo-rodriguez-36739619b" target="_blank" style="color: #58a6ff;">Visitar perfil</a></p>
+<p>📄 <a href="CV_JoseEduardoRodriguez.pdf" target="_blank" style="color:#58a6ff; font-weight:bold;">Descargar CV</a></p>
+</section>
+
+<footer>
+<p>&copy; 2025 JERG. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+function mostrarSeccion(id) {
+document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+
+document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+event.target.classList.add('active');
+}
+
+function toggleExpand(element) {
+element.classList.toggle('activo');
+}
+</script>
 </body>
 </html>
