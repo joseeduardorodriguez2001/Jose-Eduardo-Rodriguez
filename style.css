@@ -1,0 +1,91 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0d1117;
+  color: white;
+}
+header {
+  text-align: center;
+  padding: 50px 20px;
+  background: #161b22;
+  position: relative;
+  overflow: hidden;
+}
+.galaxy-container {
+  position: relative;
+  display: inline-block;
+  width: 360px;
+  height: 360px;
+}
+.central-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid #58a6ff;
+  z-index: 10;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+.orbiting-icon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+}
+h1 { font-size: 2.2rem; color: #fff; margin-top: 20px; }
+nav {
+  background-color: #0d1117;
+  padding: 15px 0;
+  text-align: center;
+}
+nav a {
+  color: #58a6ff;
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+section {
+  display: none;
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+section.active { display: block; }
+h2 {
+  color: #58a6ff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.sobre-mi-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.cuadro-sobre-mi {
+  flex: 1 1 300px;
+  background-color: #161b22;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(88,166,255,0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.cuadro-sobre-mi:hover {
+  box-shadow: 0 0 15px rgba(88,166,255,0.4);
+}
+.contenido-expandible {
+  display: none;
+  margin-top: 10px;
+}
+.cuadro-sobre-mi.activo .contenido-expandible {
+  display: block;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #161b22;
+  color: #8b949e;
+}

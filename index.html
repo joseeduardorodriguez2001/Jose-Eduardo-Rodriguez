@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio de Eduardo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="galaxy-container">
+      <img src="perfil.jpg.jpg" alt="Foto de Eduardo" class="central-image" />
+      <img src="https://www.pngall.com/wp-content/uploads/17/Dataverse-Logo-Digital-Emblem-PNG-thumb.png" class="orbiting-icon" data-radius="130" data-speed="0.01" />
+      <img src="https://www.it.miami.edu/_assets/images/PowerApps_256.png" class="orbiting-icon" data-radius="150" data-speed="0.008" />
+      <img src="https://logos-world.net/wp-content/uploads/2022/02/Power-BI-Logo.png" class="orbiting-icon" data-radius="170" data-speed="0.006" />
+      <img src="https://circyl.co.uk/wp-content/uploads/2023/02/icon_automate.png" class="orbiting-icon" data-radius="190" data-speed="0.004" />
+    </div>
+    <h1>Jose Eduardo Rodríguez Guzman</h1>
+    <p>Business Intelligence Analyst</p>
+  </header>
+
+  <nav>
+    <a onclick="mostrarSeccion('sobre-mi')">Sobre mí</a>
+    <a onclick="mostrarSeccion('contacto')">Contacto</a>
+  </nav>
+
+  <section id="sobre-mi" class="active">
+    <h2>Sobre mí</h2>
+    <div class="sobre-mi-grid">
+      <div class="cuadro-sobre-mi" onclick="toggleExpand(this)">
+        <h3>🧑‍💼 Resumen Profesional</h3>
+        <div class="contenido-expandible">
+          <p>Mi nombre es José Eduardo Rodríguez, soy estudiante de Ingeniería en Redes y Telecomunicaciones...</p>
+        </div>
+      </div>
+      <div class="cuadro-sobre-mi" onclick="toggleExpand(this)">
+        <h3>⚙️ Habilidades Técnicas</h3>
+        <div class="contenido-expandible">
+          <ul>
+            <li>Modelado de datos con Power Query y M</li>
+            <li>Dashboards en Power BI</li>
+            <li>Power Automate, Power Apps</li>
+            <li>Excel avanzado, SQL, SharePoint</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cuadro-sobre-mi" onclick="toggleExpand(this)">
+        <h3>🌟 Habilidades Blandas y Visión</h3>
+        <div class="contenido-expandible">
+          <ul>
+            <li>Pensamiento analítico</li>
+            <li>Comunicación efectiva</li>
+            <li>Colaboración multidisciplinaria</li>
+            <li>Visión de crecimiento en Business Intelligence</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>📞 Teléfono: <span style="color: #58a6ff;">(829)-750-1932</span></p>
+    <p>✉️ Correo: <a href="mailto:joseeduardorodriguez2001@gmail.com" style="color: #58a6ff;">joseeduardorodriguez2001@gmail.com</a></p>
+    <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/jose-eduardo-rodriguez-36739619b" target="_blank" style="color: #58a6ff;">Visitar perfil</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Eduardo. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
