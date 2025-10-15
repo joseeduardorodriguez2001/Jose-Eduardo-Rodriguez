@@ -265,6 +265,17 @@ segmentación por área de producción, y alertas visuales mediante formato cond
 <p>Diseñé un dashboard en Power BI para el área de incoming inspection que analiza el ciclo completo de los materiales en planta. El reporte permite visualizar cuánto tiempo tardan los materiales en ser inspeccionados, quién realiza la disposición, qué materiales presentan más defectos, qué proveedores envían más productos no conformes y qué técnicos tienen mayor carga de trabajo.
 Este análisis ha sido clave para identificar oportunidades de mejora en el proceso de inspección, optimizar la asignación de recursos y fortalecer la trazabilidad y control de calidad en la recepción de materiales.</p>
 </div>
+<div class="proyecto">
+<h4>Dashboard interactivo para análisis y actualización de acciones en planta
+</h4>
+<h5>Mejora realizada</h5>
+<p>Se creó un dashboard en Power BI conectado a la lista de SharePoint que centraliza métricas como Score, estado de acciones, línea y responsables, permitiendo análisis visual y toma de decisiones. 
+  Se habilitó la integración con Power Apps mediante el visual embebido, para que los usuarios actualicen datos directamente desde el reporte sin salir del entorno de análisis.</p>
+<h5>Resumen</h5>
+<p>El dashboard ofrece una vista consolidada del desempeño de líneas y cumplimiento de acciones, con filtros dinámicos y KPIs clave que facilitan la toma de decisiones basada en datos actualizados. 
+  La integración con Power Apps permite la edición en vivo de registros, eliminando procesos manuales en Excel y garantizando que la información reflejada sea siempre la más reciente. Esta solución mejora la transparencia, el control en auditorías y el seguimiento de acciones, 
+  optimizando la gestión operativa y reduciendo tiempos de actualización mediante un ecosistema integrado de Power BI, Power Apps y SharePoint.</p>
+</div>
 </div>
 </div>
 </div>
@@ -302,7 +313,18 @@ automatizar aprobaciones, generar registros electrónicos y facilitar el anális
 <p>Implementación de flujos en Power Automate para enviar recordatorios automáticos a responsables de acciones comprometidas. 
 El sistema consulta listas de SharePoint, evalúa fechas límite y envía notificaciones por correo y Teams, reduciendo el riesgo de incumplimientos.</p>
 </div>
-
+  
+<div class="proyecto">
+<h4>Botón en Power BI para actualización en vivo del dataset mediante Power Automate</h4>
+<h5>Mejora Realizada</h5>
+<p>Se implementó un botón en el dashboard de Power BI que ejecuta un flujo en Power Automate para actualizar el dataset en tiempo real. Esta integración elimina la necesidad de esperar actualizaciones programadas o 
+  realizar refresh manual desde el servicio, garantizando que los usuarios vean datos actualizados inmediatamente después de realizar cambios en Power Apps.</p>
+<h5>Resumen</h5>
+<p>La solución consiste en un flujo de Power Automate conectado al servicio de Power BI que utiliza el conector Power BI REST API para ejecutar la acción Refresh Dataset. 
+  El flujo se dispara desde un botón en el reporte mediante el Power Automate visual, lo que permite a los usuarios actualizar el dataset sin salir del dashboard. Este mecanismo asegura que los cambios realizados en la lista de SharePoint a través de Power Apps se reflejen de forma instantánea en las visualizaciones, optimizando la toma de decisiones y reduciendo tiempos de espera. La integración entre Power BI, 
+  Power Automate y SharePoint crea un ecosistema dinámico y automatizado que mejora la eficiencia operativa y la experiencia del usuario.</p>
+</div>
+  
 </div>
 </div>
 </div>
@@ -352,7 +374,18 @@ filtran por estatus y crean nuevos casos. Power Automate gestiona aprobaciones t
 <p>Diseñé una aplicación en Power Apps para el laboratorio de incoming que agrupa todos los reportes operativos en un solo sistema: inspecciones diarias, materiales con defecto y nuevos ingresos. 
   Esta solución permite una trazabilidad completa del estatus de cada material a lo largo del tiempo, incluyendo quién lo inspeccionó y qué disposición se tomó en caso de no conformidad.</p>
 </div>
-
+  
+  <div class="proyecto">
+<h4>Aplicación para actualización en vivo de acciones y métricas desde Power Apps.</h4>
+<h5>Mejora Realizada</h5>
+<p>Se reemplazó el proceso manual en Excel por una aplicación interactiva en Power Apps que permite a los usuarios actualizar datos directamente en la lista de SharePoint, 
+  incluyendo campos como Status, Responsable, Score y detalles de acciones, con controles dinámicos y lógica delegable para garantizar rendimiento y escalabilidad.</p>
+<h5>Resumen</h5>
+<p>La solución permite que los responsables de línea y auditores actualicen información en tiempo real desde cualquier dispositivo, eliminando la dependencia de hojas Excel y 
+  reduciendo errores por duplicidad. Se incorporaron funcionalidades como edición directa en galerías, validación de tipos para campos complejos (Choice, Persona, Fecha) y búsqueda delegable para grandes volúmenes de datos. 
+  Gracias a la integración con SharePoint, los datos se almacenan de forma segura y 
+  están disponibles para análisis inmediato en Power BI, logrando un flujo más ágil, colaborativo y con reducción significativa del tiempo de actualización.</p>
+</div>
 
 
 </div>
